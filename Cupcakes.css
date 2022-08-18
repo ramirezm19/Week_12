@@ -1,0 +1,14 @@
+/*styling for the navbar*/
+
+.navbar {
+    background-color: #e2c8f7;
+    font-weight: bold;
+    font-size: 100px;
+    font-family: serif;
+}
+
+/*styling for the cards*/
+.card {
+    width: 50%;
+    align-items: center;
+}
