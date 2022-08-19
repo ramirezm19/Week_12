@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="Cupcakes.css">
 </head>
 
+<header>
+  <nav class="navbar" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="cuppy.jpg" alt="" width="100
+        " height="100
+        " class="d-inline-block align-text-center">
+        Cuppy Cupcakes
+      </a>
+    </div>
+  </nav>
+</header>
+
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="cuppy.jpg" alt="" width="100
-            " height="100
-            " class="d-inline-block align-text-center">
-            Cuppy Cupcakes
-          </a>
-        </div>
-      </nav> 
-    
+  <main class = "container mt-4">
+     
     <!--Button to create new Cupcake, using HTML side for creating an event listener-->
     <button class="btn btn-primary mt-4" onclick="onNewCupcakeClick()" id="newCupcake">New Cupcake</button> 
 
@@ -43,9 +47,9 @@
      </div>
 
      <!--Modal to edit already-created cupcakes -->
-     <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#edit-modal">
+     <!-- <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#edit-modal">
         Launch demo modal
-      </button>
+      </button> -->
 
      <div class="modal" tabindex="-1" id="new-cupcake-modal">
         <div class="modal-dialog">
@@ -62,6 +66,7 @@
                 <input type="text" id="filling-input" class="form-control"/>
                 <label for="frosting-input" class="form-label">Frosting</label>
                 <input type="text" id="frosting-input" class="form-control"/>
+                <input type="hidden" id="cupcakeEdit-input" class="form-control" value=true/>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -70,6 +75,12 @@
           </div>
         </div>
       </div>
+    </main>
+    
+  <footer>
+    <div class="container-fluid p-3 mt-5">
+      <p class="text-center">© August 2022 </p>
+  </footer>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>

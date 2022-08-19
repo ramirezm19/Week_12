@@ -11,4 +11,25 @@
 .card {
     width: 50%;
     align-items: center;
+    background-image: url(background.jpg);
 }
+
+/*styling for the footer*/
+footer {
+    background-color: #e2c8f7;
+    font-weight: bold;
+    font-family: serif;
+}
+
+/*styling for the body*/
+body {
+    background-color: #acf1fa; 
+    background-repeat: no-repeat;
+}
+
+/* styling for the buttons*/
+/* .btn {
+    background-color: #c3fac9;
+    border-color: #f24bd4;
+    color: #f24bd4
+} */

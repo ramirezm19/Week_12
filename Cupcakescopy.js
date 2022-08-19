@@ -6,13 +6,15 @@ const cupcakeList = [
         id: 0,
         flavor: "Chocolate",
         filling: "Raspberry",
-        frosting: "Buttercream"
+        frosting: "Buttercream",
+        cupcakeEdit: false
     },
     {
         id: 1,
         flavor: "Lemon",
         filling: "Lemon",
-        frosting: "Whipped Cream"
+        frosting: "Whipped Cream",
+        cupcakeEdit: false
     },
 ]
 
@@ -53,6 +55,8 @@ const $cupcakeModalTitle = $("cupcake-modal-title")
 const $flavorInput = $("#flavor-input")
 const $fillingInput = $("#filling-input")
 const $frostingInput = $("#frosting-input")
+const $cupcakeEditInput = $("#cupcakeEdit-input")
+console.log($cupcakeEditInput)
 let editCupcakeId = null; 
 
 function onNewCupcakeClick() {
@@ -63,6 +67,7 @@ function onNewCupcakeClick() {
     $flavorInput.val("");
     $fillingInput.val("");
     $frostingInput.val("");
+    $cupcakeEditInput.val("");
 
     //identifying that creating a cupcake
     editCupcakeId = null; 
@@ -81,6 +86,7 @@ function onEdit(cupcakeId){
     $flavorInput.val(cupcake.flavor);
     $fillingInput.val(cupcake.filling);
     $frostingInput.val(cupcake.frosting);
+    $cupcakeEditInput.val(cupcake.cupcakeEdit);
 
     //identifying that editing a cupcake
     editCupcakeId = cupcake.id;
@@ -89,6 +95,10 @@ function onEdit(cupcakeId){
 
 
 function onSaveCreate() {
+
+    // const cupcakeElement = document.getElementById(`cupcake-${cupcake.id}`)
+    // console.log('onSaveCreate', cupcakeElement);
+
     //check to see if saving a newly created cupcake vs. updating a cupcake
     if(editCupcakeId === null) {
         //get the input from the modal and create new cupcake and add it to list
@@ -101,6 +111,8 @@ function onSaveCreate() {
     } else {
         //find cupcake
         const cupcake = cupcakeList.findIndex(cupcake => cupcake.id === editCupcakeId);
+        console.log('onSaveCreate inside create statement', cupcakeList);
+        cupcake.innerHTML = "<div>text</div>"
         //update with new info
         cupcake.flavor = $flavorInput.val();
         cupcake.filling = $fillingInput.val();
