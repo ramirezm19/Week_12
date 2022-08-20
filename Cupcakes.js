@@ -53,7 +53,6 @@ const $cupcakeModalTitle = $("cupcake-modal-title")
 const $flavorInput = $("#flavor-input")
 const $fillingInput = $("#filling-input")
 const $frostingInput = $("#frosting-input")
-let editCupcakeId = null; 
 
 function onNewCupcakeClick() {
     //opening the modal
@@ -71,7 +70,7 @@ function onNewCupcakeClick() {
 
 function onEdit(cupcakeId){
     //selecting the right cupcake to edit
-    const cupcake = cupcakeList.findIndex(cupcake => cupcake.id === cupcakeId);
+    const cupcake = cupcakeList.find(cupcake => cupcake.id === cupcakeId);
     //opening the modal
     cupcakeModal.show();
     //change title of the modal
@@ -86,21 +85,19 @@ function onEdit(cupcakeId){
     editCupcakeId = cupcake.id;
 }
 
-
-
 function onSaveCreate() {
     //check to see if saving a newly created cupcake vs. updating a cupcake
     if(editCupcakeId === null) {
         //get the input from the modal and create new cupcake and add it to list
         cupcakeList.push({
-            id: cupcakeList[cupcakeList.length -1].id + 1,
+            id: cupcakeList[cupcakeList.length-1].id + 1,
             flavor: $flavorInput.val(),
             filling: $fillingInput.val(),
             frosting: $frostingInput.val()
         })
     } else {
         //find cupcake
-        const cupcake = cupcakeList.findIndex(cupcake => cupcake.id === editCupcakeId);
+        const cupcake = cupcakeList.find(cupcake => cupcake.id === editCupcakeId);
         //update with new info
         cupcake.flavor = $flavorInput.val();
         cupcake.filling = $fillingInput.val();

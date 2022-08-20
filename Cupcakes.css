@@ -4,13 +4,13 @@
     background-color: #e2c8f7;
     font-weight: bold;
     font-size: 100px;
-    font-family: serif;
+    font-family: serif ;
 }
 
 /*styling for the cards*/
 .card {
     width: 50%;
-    align-items: center;
+    align-items: left;
     background-image: url(background.jpg);
 }
 
@@ -24,12 +24,13 @@ footer {
 /*styling for the body*/
 body {
     background-color: #acf1fa; 
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;;
 }
 
-/* styling for the buttons*/
-/* .btn {
+/*styling for the buttons*/
+.btn {
     background-color: #c3fac9;
-    border-color: #f24bd4;
-    color: #f24bd4
-} */
+    border-color: #c3fac9;
+    color: #f24663;
+    font-weight: bold;
+}
